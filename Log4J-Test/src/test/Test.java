@@ -1,13 +1,11 @@
 package test;
 
+import org.apache.log4j.Logger;
+
 public class Test {
-
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		Logger  log = Logger.getLogger(Test.class.getName());
+		System.out.println(Test.class);
+		log.info("..");
 	}
-
 }
