@@ -1,10 +1,10 @@
-package test;
+package rembau;
 
 import org.apache.log4j.Logger;
 
 public class Test {
 	public static void main(String[] args) {
-		Logger  log = Logger.getLogger(Test.class.getName());
+		Logger  log = Logger.getLogger(Test.class);
 		System.out.println(Test.class);
 		log.info("..");
 		try {
