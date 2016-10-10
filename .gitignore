@@ -1,3 +1,5 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea/
 Log4J-Test.iml
+logs/
+target/
