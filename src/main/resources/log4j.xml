@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/" debug="true">
+
+    <appender name="R" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="C:\\Users\\youyue\\Desktop\\tem\\dayxml.log" />
+        <param name="Append" value="false" />
+        <param name="Threshold" value="info" />
+        <param name="bufferedIO" value="true" />
+        <param name="MaxFileSize" value="1000MB" />
+        <!--<param name="DatePattern" value="yyyy_MM_dd'.'" />-->
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d] %p (%F:%L) [%t] %c - %m%n" />
+        </layout>
+    </appender>
+
+    <appender name="Ra" class="org.apache.log4j.AsyncAppender">
+        <param name="BufferSize" value="2096" />
+        <appender-ref ref="R" />
+    </appender>
+
+    <root>
+        <priority value="DEBUG" />
+        <appender-ref ref="R" />
+    </root>
+
+</log4j:configuration>
