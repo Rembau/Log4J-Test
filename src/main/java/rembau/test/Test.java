@@ -4,16 +4,23 @@ package rembau.test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class Test {
-    private final static Logger logger = LoggerFactory.getLogger(Test.class);
+import java.io.FileNotFoundException;
 
-    public static void main(String[] args) {
+public class Test {
+    private static Logger logger = LoggerFactory.getLogger(Test.class);
+
+    public static void main(String[] args) throws FileNotFoundException {
         logger.info("..");
-		try {
+
+        Logger org = LoggerFactory.getLogger("org");
+        org.info("org");
+        Logger rembau = LoggerFactory.getLogger("org.rembau");
+        rembau.info("org.rembau");
+        try {
 			Thread.sleep(100);
 		} catch (InterruptedException e) {
-            logger.error("", e);
+            Test.logger.error("", e);
         }
-        logger.debug("1111");
+        Test.logger.debug("1111");
 	}
 }
